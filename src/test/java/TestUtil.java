@@ -23,4 +23,9 @@ public class TestUtil {
   public void evenParams() {
   	assertFalse(c.compute(1, 2));
   }
+
+  @Test(expected = RuntimeException.class)
+  public void zero() {
+  	c.compute(1, 2, 0);
+  }
 }
