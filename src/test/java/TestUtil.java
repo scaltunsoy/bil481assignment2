@@ -13,4 +13,9 @@ public class TestUtil {
 
   @Test
   public void example() { assertTrue(true); }
+
+  @Test
+  public void oneParam() {
+  	assertFalse(c.compute(2));
+  }
 }
