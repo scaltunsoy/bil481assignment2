@@ -28,4 +28,9 @@ public class TestUtil {
   public void zero() {
   	c.compute(1, 2, 0);
   }
+
+  @Test
+  public void sumDivisible() {
+  	assertTrue(c.compute(3, 2, 1));
+  }
 }
