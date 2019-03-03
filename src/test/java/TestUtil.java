@@ -33,4 +33,9 @@ public class TestUtil {
   public void sumDivisible() {
   	assertTrue(c.compute(3, 2, 1));
   }
+
+  @Test
+  public void sumNotDivisible() {
+  	assertFalse(c.compute(5, 7, 11));
+  }
 }
