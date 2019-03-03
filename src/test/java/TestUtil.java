@@ -18,4 +18,9 @@ public class TestUtil {
   public void oneParam() {
   	assertFalse(c.compute(2));
   }
+
+  @Test
+  public void evenParams() {
+  	assertFalse(c.compute(1, 2));
+  }
 }
