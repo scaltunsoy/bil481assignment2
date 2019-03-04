@@ -25,4 +25,16 @@ public class TestCompute {
   	assertEquals(-1, c.countNumberOfOccurrences("samet"));
   	verify(mq, new Times(1)).size();
   }
+
+  @Test
+  public void notContains() {
+  	MessageQueue mq = mock(MessageQueue.class);
+  	c = new Compute(mq);
+  	when(mq.size()).thenReturn(1);
+  	when(mq.contains(anyString())).thenReturn(false);
+
+  	assertEquals(0, c.countNumberOfOccurrences("samet"));
+  	verify(mq, new Times(1)).size();
+  	verify(mq, new Times(1)).contains(anyString());
+  }
 }
