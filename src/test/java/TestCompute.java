@@ -37,4 +37,18 @@ public class TestCompute {
   	verify(mq, new Times(1)).size();
   	verify(mq, new Times(1)).contains(anyString());
   }
+
+  @Test
+  public void oneOccurence() {
+  	MessageQueue mq = mock(MessageQueue.class);
+  	c = new Compute(mq);
+  	when(mq.size()).thenReturn(2);
+  	when(mq.contains("samet")).thenReturn(true);
+  	when(mq.getAt(0)).thenReturn("samet");
+
+  	assertEquals(1, c.countNumberOfOccurrences("samet"));
+  	verify(mq, new Times(4)).size();
+  	verify(mq, new Times(1)).contains(anyString());
+  	verify(mq, new Times(2)).getAt(anyInt());
+  }
 }
